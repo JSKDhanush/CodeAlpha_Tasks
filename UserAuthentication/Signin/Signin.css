@@ -1,0 +1,362 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+}
+
+.right-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.signinbox1 {
+  color: #e5e5e5;
+  width: 350px;
+  padding: 20px;
+  text-align: left;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 30px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #efdf11;
+  font-family: 'Exo', sans-serif;
+}
+
+.welcome-message {
+  font-size: 14px;
+  color: #e5e5e5;
+  font-family: "Arial", sans-serif;
+}
+
+.signintitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+  font-family: "Arial", sans-serif;
+}
+
+
+.inputgroup {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+
+.inputfield {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 13px;
+  border: 1px solid #606060;
+  border-radius: 10px;
+  background-color: #17171a;
+  color: #e5e5e5;
+  outline: none;
+  transition: border 0.3s ease;
+  font-family: "Arial", sans-serif;
+}
+
+
+.inputfield:focus {
+  border: 1px solid #00ff00;
+}
+
+.inputlabel {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #e5e5e5;
+  background-color: #17171a;
+  padding: 0 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#password + .inputlabel {
+  top: 33%;
+}
+
+.inputfield:focus + .inputlabel,
+.inputfield:not(:placeholder-shown) + .inputlabel {
+  opacity: 1;
+  transform: translateY(-150%);
+}
+
+.inputfield::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.inputfield:focus::placeholder {
+  opacity: 0;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 33%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #e5e5e5;
+  cursor: pointer;
+}
+
+.forgotpassword {
+  display: block;
+  font-size: 12px;
+  color: #00ff00;
+  text-decoration: none;
+  margin-top: 5px;
+  text-align: right;
+  font-family: "Arial", sans-serif;
+}
+
+
+.signinbutton {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #e8e81f;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-family: "Arial", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.signuptext {
+  font-size: 12px;
+  color: #E5E5E5;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.signup-link {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: #E5E5E5;
+  font-size: 10px;
+  margin: 15px 20px;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #333;
+  margin: 0 10px;
+}
+
+.googlebutton,
+.apple-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  border: 0.5px solid #8B8B8B;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #222;
+  color: #E5E5E5;
+  transition: border 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.google-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.terms {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.terms-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 7px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 7px;
+}
+
+.error-messages {
+  color: red;
+  font-size: 12px;
+  margin-top: 7px;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 7px;
+  padding-left: 10%;
+}
+
+
+.error-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffdddd;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: red;
+}
+
+.inputfield:-webkit-autofill,
+.inputfield:-webkit-autofill:hover,
+.inputfield:-webkit-autofill:focus,
+.inputfield:-internal-autofill-previewed {
+  background-color: #888daa !important;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* Mobile View (Max-width 600px) */
+@media (max-width: 600px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .signin-box {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .logo,
+  .logo-text,
+  .welcome-message {
+    display: none;
+  }
+
+  .signintitle {
+    font-size: 22px;
+    padding: 0 14px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .inputgroup {
+    padding: 0 14px;
+  }
+
+  .inputfield {
+    font-size: 14px;
+  }
+
+  .signinbutton {
+    font-size: 14px;
+    width: 90%;
+    margin: 0 14px;
+    margin-bottom: 10px;
+  }
+  
+  .googlebutton,
+  .apple-button {
+    width: 90%;
+    margin: 0 14px;
+  }
+
+  .inputlabel {
+    font-size: 11px;
+    left: 25px;
+    top: 40%;
+  }
+
+  #password + .inputlabel {
+    top: 25%;
+  }
+
+  .eye-icon {
+    right: 25px;
+  }
+}

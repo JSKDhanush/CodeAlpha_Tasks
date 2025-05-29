@@ -1,0 +1,238 @@
+/* Base Styles */
+.verifycontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.verifybox {
+  background-color: #17171a;
+  color: #e5e5e5;
+  border: 0.5px solid #606060;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0.5px 0.5px 1px 1px rgb(137, 137, 137);
+}
+
+.verifytitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 4%;
+  color: #ffffff;
+}
+
+/* OTP Input Group */
+.otpinputgroup {
+  width: 85%;
+  display: flex;
+  margin-left: 8%;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 35px;
+}
+
+.otpinput {
+  width: 40px;
+  height: 50px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #8b8b8b;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.otpinput:focus {
+  outline: none;
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(to right, #4af53b, #e8e81f);
+  background-size: 100% 2px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  color: #e5e5e5;
+}
+
+/* Email and Icon */
+.verifyemail {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons and Links */
+.resendsection {
+  font-size: 13px;
+  color: #b5b5b5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.resendlink {
+  color: #4af53b;
+  text-decoration: none;
+}
+
+.resendlink.disabled {
+  pointer-events: none;
+  color: gray;
+}
+
+.nextbutton {
+  width: 85%;
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 13%;
+  background-color: #e8e81f;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nextbutton:hover {
+  background-color: #d7d700;
+}
+
+/* Error & Success Messages */
+.errormessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.successmessage {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Edit Icon */
+.editicon {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #b5b5b5;
+  transition: color 0.2s ease;
+  margin-top: 20px;
+}
+
+.editicon:hover {
+  color: #fff;
+}
+
+/* Error Button */
+.errorbutton {
+  background-color: #ffcccc;
+  color: red;
+  border: 1px solid #ff6666;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .verifybox {
+    width: 80%;
+    padding: 30px;
+  }
+
+  .otpinput {
+    width: 35px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .nextbutton {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 14px;
+  }
+
+  .verifytitle {
+    font-size: 18px;
+    margin-top: 5%;
+  }
+
+  .resendsection {
+    font-size: 12px;
+  }
+
+  .errormessage,
+  .successmessage {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .verifybox {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .otpinputgroup {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .otpinput {
+    width: 30px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .verifytitle {
+    font-size: 16px;
+  }
+
+  .nextbutton {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .verifybox {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .otpinput {
+    width: 28px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .verifytitle {
+    font-size: 14px;
+  }
+
+  .nextbutton {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 12px;
+  }
+
+  .resendsection {
+    font-size: 10px;
+  }
+}
