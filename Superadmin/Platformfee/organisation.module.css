@@ -1,0 +1,532 @@
+/* General Layout */
+.dashboard {
+  display: flex;
+  font-family: sans-serif;
+  background-color: black; /* Background color for the entire dashboard */
+  height: 100vh;
+}
+
+.content {
+  margin-top: 50px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: #ffffff;
+  padding: 20px;
+  margin-left: 250px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: 80px;
+  }
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.loaderWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* Container */
+.container {
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.page_title {
+  margin: 0 0 20px 0;
+  font-size: 22px;
+
+  color: #ffffff;
+  text-align: left;
+  margin-top: 0;
+}
+
+/* Table styles */
+.table_container {
+  background-color: #11140b;
+  border-radius: 20px 20px 20px 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Changed to collapse for row spacing */
+  text-align: center;
+}
+
+.table th {
+  padding: 15px; /* Increased padding for headers */
+  text-align: left;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #212714; /* Header background color */
+  height: 100px;
+}
+
+.table th:nth-child(1) {
+  padding-left: 30px; /* Added padding-left for the first column header */
+}
+
+.table td {
+  padding: 15px; /* Increased padding for cells */
+  text-align: left;
+  font-size: 14px;
+  color: #ffffff;
+  border-bottom: 1px solid #253443; /* Separator line for rows */
+}
+
+.table td:nth-child(1) {
+  padding-left: 50px; /* Added padding-left for the first column cells */
+}
+
+.table tr {
+  border-radius: 8px; /* Rounded corners for rows */
+}
+
+/* Edit and Delete Buttons */
+.edit_button {
+  padding: 5px 15px;
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.delete_button {
+  padding: 5px 15px;
+  color: #e8e81f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: #e8e81f 1px solid;
+  font-weight: bold;
+}
+
+/* Modal Styles */
+.modal_overlay {
+  position: fixed;
+  padding: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  margin-top: 30px;
+}
+
+.modal_content {
+  background-color: #121a12;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal_content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 16px;
+}
+
+.edit_user_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form_group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.form_group input {
+  width: 100%;
+  padding: 10px;
+  border: #e9dcdcd9 1px solid;
+  border-radius: 10px;
+  color: #e9dcdcd9;
+  font-size: 14px;
+  background: linear-gradient(#181818, #181818) padding-box;
+  box-sizing: border-box;
+  transition: border 0.3s, background 0.3s;
+}
+
+.form_group input:focus {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(#181818, #181818) padding-box,
+    linear-gradient(45deg, #4af53b, #e8e81f) border-box;
+}
+
+/* Remove scrollbars/spinners from number input */
+.modal_input::-webkit-outer-spin-button,
+.modal_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form_actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cancel_button {
+  background-color: transparent;
+  color: #e8e81f;
+  border: 1px solid #e8e81f;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.update_button {
+  background-color: #e8e81f;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.update_button:hover {
+  background-color: #ffa000;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Unified filter styling for both user type and organization filters */
+.filter_select {
+  padding: 10px;
+  background-color: #121212; /* Match background color */
+  color: white;
+  border: 2px solid #253443;
+  border-radius: 5px;
+  width: 150px;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: none; /* Remove default select arrow */
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure select element maintains consistent styling */
+.filter_select select {
+  background: transparent;
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Active state for organization dropdown */
+.filter_select.active {
+  border-color: #ccc; /* Maintain same border color */
+}
+
+/* Organization dropdown wrapper */
+.orgDropdownWrapper {
+  position: relative;
+}
+
+/* Organization filter text */
+.orgFilterText {
+  padding: 0 5px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Clear icon for organization filter */
+.orgClearIcon {
+  cursor: pointer;
+}
+
+/* Dropdown menu for organization filter */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1e2116; /* Match filter_select background */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown_item {
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: black; /* Dropdown item background color */
+}
+
+.dropdown_item:hover {
+  background-color: #5d5858; /* Hover background color */
+}
+
+/* Pagination */
+.paginationContainer {
+  padding-top: 0px;
+  position: sticky;
+  bottom: 0;
+  /* background-color: #11140B; */
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  z-index: 10; /* Stay above scrolling content */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 15px;
+  /* background-color: #11140B; */
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  margin: 0; /* Remove any margin */
+}
+
+.pageSize {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #e8eaed;
+  font-size: 14px;
+}
+
+.pageSizeSelect {
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: #161f28;
+  color: #e8eaed;
+  font-size: 14px;
+}
+
+.pageSizeSelect1 {
+  padding: 5px;
+  background-color: #161f28;
+  color: #e8eaed;
+  font-size: 14px;
+}
+
+.pageControls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pageButton {
+  padding: 5px 10px;
+  color: #e8eaed;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.pageButton:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #999;
+}
+
+.activePage {
+  background-color: #161f28;
+  color: #fff;
+  border: 0.5px solid white;
+  font-weight: bold;
+}
+
+.ths {
+  background-color: #212714;
+}
+
+.platform {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+
+.close_icon {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.close_icon :hover{
+  color: red;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .top-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .tabs {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .count-circle {
+    width: 25px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tab {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .count-circle {
+    width: 20px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .count-circle {
+    width: 20px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .modal_content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    padding: 0%;
+  }
+  .table_container {
+    padding: 0%;
+  }
+  .content {
+    padding: 20px;
+    margin-left: 90px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 949px) and (max-width: 1265px) {
+  .sidebar {
+    width: 254px; /* Fixed sidebar width as specified */
+    overflow-y: auto; /* Ensure content is scrollable if it overflows */
+  }
+
+  .content {
+    margin-left: 254px; /* Match sidebar width */
+    margin-top: 72px; /* Match header height */
+    padding: 15px; /* Slightly reduce padding for smaller screens */
+  }
+
+  /* Ensure sidebar content is not hidden */
+  .sidebar * {
+    display: block; /* Ensure all elements are visible */
+    visibility: visible; /* Prevent hiding */
+  }
+
+  /* Optional: Adjust sidebar content if specific elements are hidden */
+  .sidebar .hidden-content {
+    display: block !important; /* Force visibility if hidden by other rules */
+  }
+}

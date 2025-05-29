@@ -1,0 +1,70 @@
+.paginationContainer {
+    padding-top: 0px;
+    position: sticky;
+    bottom: 0;
+    background-color: transparent; 
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    z-index: 10; /* Stay above scrolling content */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center; /* Center the entire pagination */
+    align-items: center;
+    padding: 10px 15px;
+    /* background-color: #11140B; */
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    margin: 0; /* Remove any margin */
+  }
+  
+  .pageControls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .pageSize {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #e8eaed;
+    font-size: 14px;
+    margin-left: 10px; /* Optional: Add some space between page controls and page size */
+  }
+  
+  .pageSizeSelect {
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: #161F28;
+    color: #e8eaed;
+    font-size: 14px;
+  }
+  
+  .pageButton {
+    padding: 5px 10px;
+    color: #e8eaed;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .pageButton:hover:not(:disabled) {
+    /* background-color: #333; */
+  }
+  
+  .pageButton:disabled {
+    /* background-color: #555; */
+    cursor: not-allowed;
+    color: #999;
+  }
+  
+  .activePage {
+    background-color: #161F28;
+    color: #fff;
+    border: 0.5px solid white;
+    font-weight: bold;
+  }

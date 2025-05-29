@@ -1,0 +1,364 @@
+/* DashboardContent.module.css */
+
+/* Base styles for dashboard content */
+.dashboardContent {
+  flex: 1;
+  padding: 20px;
+  background-color: #111;
+  margin-left: 250px; /* Default sidebar width */
+  margin-top: 70px; /* Default header height */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sidebar and Header base styles */
+.sidebar {
+  width: 250px; /* Default sidebar width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #11140b;
+  z-index: 1000;
+}
+
+.header {
+  height: 70px; /* Default header height */
+  position: fixed;
+  top: 0;
+  left: 250px; /* Matches default sidebar width */
+  right: 0;
+  background-color: #11140b;
+  z-index: 999;
+}
+
+/* Stats section */
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Card styles */
+.card {
+  background-color: #11140b;
+  border: 1px solid #253443;
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.card:hover {
+  background-color: #1a1a1a;
+  transition: background-color 0.3s ease;
+  border: 1px solid #edf1f6;
+
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.cardHeader img {
+  z-index: 1; /* Ensure images are above other elements */
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  margin-right: 30px;
+}
+
+.cardValue {
+  font-size: 24px;
+  color: #f8eeee;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+.cardSmall {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+/* Charts section */
+.charts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.chart {
+  background-color: #11140b;
+  border: 1px solid #253443;
+  border-radius: 20px;
+  padding: 20px;
+  flex: 1;
+  min-width: 400px;
+}
+
+.pieChart {
+  min-height: 200px;
+  min-width: 400px;
+}
+
+.barChartTitle {
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Tables section */
+.tablesContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tableCard {
+  background: #11140b;
+  border: 1px solid #253443;
+  padding: 20px;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 400px;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableTh,
+.tableTd {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #253443;
+  color: #fff;
+  font-size: 12px;
+}
+
+.tableTbody .tableTr:last-child .tableTd {
+  border-bottom: none;
+}
+
+.tableTh {
+  font-weight: 600;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+.noData {
+  color: red;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f8d7da;
+}
+
+/* Loader wrapper */
+.loaderWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* Responsive adjustments */
+
+/* 320px to 949px */
+@media screen and (min-width: 320px) and (max-width: 949px) {
+  .sidebar {
+    width: 94px;
+  }
+  .header {
+    height: 72px;
+    left: 94px; /* Match sidebar width */
+  }
+  .dashboardContent {
+    margin-left: 94px;
+    margin-top: 72px;
+    padding: 10px;
+  }
+  .card,
+  .chart,
+  .tableCard {
+    min-width: 100%; /* Full width */
+  }
+  .charts {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .stats,
+  .tablesContainer {
+    flex-direction: column;
+  }
+  .tableTh,
+  .tableTd {
+    padding: 6px;
+    font-size: 10px;
+  }
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardValue {
+    font-size: 20px;
+  }
+  .card {
+    padding: 15px;
+  }
+  .chart {
+    padding: 15px;
+  }
+  .tableCard {
+    padding: 15px;
+  }
+  .tableHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 950px to 1264px */
+@media screen and (min-width: 950px) and (max-width: 1264px) {
+  .sidebar {
+    width: 254px;
+  }
+  .header {
+    height: 72px;
+    left: 254px; /* Match sidebar width */
+  }
+  .dashboardContent {
+    margin-left: 254px;
+    margin-top: 72px;
+    padding: 15px;
+  }
+  .card,
+  .chart,
+  .tableCard {
+    min-width: 100%;
+  }
+  .charts {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .stats,
+  .tablesContainer {
+    flex-direction: column;
+  }
+  .tableTh,
+  .tableTd {
+    padding: 6px;
+    font-size: 10px;
+  }
+}
+
+/* 1265px to 1920px */
+@media screen and (min-width: 1265px) and (max-width: 1920px) {
+  .sidebar {
+    width: 200px;
+  }
+  .header {
+    height: 65px;
+    left: 200px; /* Match sidebar width */
+  }
+  .dashboardContent {
+    margin-left: 200px;
+    margin-top: 65px;
+    padding: 10px;
+    gap: 5px;
+  }
+  .cardTitle {
+    font-size: 12px;
+  }
+  .cardValue {
+    font-size: 14px;
+    margin: 0;
+  }
+  .cardSmall {
+    font-size: 10px;
+  }
+  .card {
+    padding: 10px;
+    min-width: 330px;
+    gap: 10px;
+  }
+  .cardHeader {
+    margin-bottom: 0;
+  }
+  .barChartTitle {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .chart {
+    padding: 10px;
+  }
+  .tableCard {
+    padding: 10px;
+  }
+  .tableHeader {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+  .tablesContainer {
+    gap: 5px;
+  }
+  .stats {
+    gap: 5px;
+  }
+  .tableTh,
+  .tableTd {
+    padding: 6px;
+    font-size: 9px;
+  }
+}
+
+/* 1921px to 2060px */
+@media screen and (min-width: 1921px) and (max-width: 2060px) {
+  .sidebar {
+    width: 254px;
+  }
+  .header {
+    height: 71px;
+    left: 254px; /* Match sidebar width */
+  }
+  .dashboardContent {
+    margin-left: 254px;
+    margin-top: 71px;
+    padding: 20px;
+  }
+}
+

@@ -1,0 +1,463 @@
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #11140b;
+    color: #fff;
+  }
+  
+  .errorTitle {
+    color: #f44336;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .reloadButton {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000;
+    color: #ffffffb6;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .loaderContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex: 1;
+    margin-top: 60px;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: #fff;
+    padding: 20px;
+    margin-left: 220px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .headerSection {
+    display: flex;
+    flex-direction: column;
+    /* border-bottom: 3px solid; */
+    /* border-image: linear-gradient(to right, #e8e81f, #4af53b) 1; */
+    padding-bottom: 8px;
+  }
+  
+  .headerTitle {
+    margin-top: 100px;
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    padding: 5px;
+  }
+  
+  .filterWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .tableHead {
+    border-radius: 20px;
+  }
+  
+  .tableHeader {
+    padding: 12px;
+    text-align: left;
+    color: #fff;
+    border-bottom: 1px solid #253443;
+    background-color: #1e2116;
+  }
+  
+  .lastHeader {
+    border-top-right-radius: 20px;
+  }
+  
+  .tableBody {
+    overflow-y: auto;
+  }
+  
+  .tableRow {
+    cursor: pointer;
+  }
+  
+  .tableCell {
+    padding: 12px;
+    text-align: left;
+    color: #fff;
+    border-bottom: 1px solid #253443;
+    background-color: #11140b;
+  }
+  
+  .lastRowCell {
+    border-bottom: none;
+  }
+  
+  .statusCell {
+    padding: 0;
+  }
+  
+  .statusSuccess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #75FB4C;
+    border-radius: 4px;
+    font-weight: 500;
+    height: 20px;
+    width: fit-content;
+  }
+  
+  .noPaymentsContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .noPaymentsText {
+    color: yellow;
+    text-align: center;
+    margin-top: 20%;
+  }
+  .container {
+    display: flex;
+    flex: 1;
+    margin-top: 60px;
+  }
+  
+  .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: #ffffff;
+    padding: 20px;
+    margin-left: 250px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  @media (max-width: 1024px) {
+    .main {
+        margin-left: 91px;
+    }
+  }
+  
+  .loaderWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #444;
+  }
+  
+  .dataTable th,
+  .dataTable td {
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+    border-color: 1px solid #444;
+    border-bottom: 1px solid #444;
+  }
+  
+  .dataTable th {
+    background-color: #1e2116;
+  }
+  
+  
+  .filterDropdown {
+    position: absolute;
+    background-color: #1e2116;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    margin-top: 35px;
+    margin-right: 20px;
+    right: 0;
+    padding: 10px;
+    width: max-content;
+    text-align: center;
+  }
+  
+  .filterOption {
+    padding: 2.5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: rgba(245, 245, 245, 0.73);
+  }
+  
+  .filterOption:hover {
+    border-bottom: 2px solid #4af53b;
+    border-radius: 10px;
+    color: #5dc960;
+  }
+  
+  .searchBar {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: whitesmoke;
+    background-color: #444;
+  }
+  
+  .filterIcon {
+    cursor: pointer;
+    display: inline-flex;
+    gap: 20px;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+  }
+  
+  .modal {
+    background-color: #1e2116;
+    border-radius: 10px;
+    border: 1px solid #444;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 630px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .modalHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 470px;
+  }
+  
+  .closeButton2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    padding: 5px;
+    padding-bottom: 40px;
+  }
+  
+  .modalHeaderContainer strong {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .modalBody {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .paymentStatusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon svg {
+    margin-bottom: 10px;
+  }
+  
+  .icon strong,
+  .icon p {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .transactionDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 350px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(#1e2116, #1e2116) padding-box,
+      linear-gradient(45deg, #4af53b, #e8e81f) border-box;
+  }
+  
+  .transactionDetails p {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0;
+    font-size: 15px;
+    white-space: nowrap;
+    gap: 3px;
+  }
+  
+  .transactionDetails strong {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .heading {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 8px;
+  }
+  
+  @media screen and (min-width: 1266px) and (max-width: 1920px) {
+    .main {
+      margin-left: 200px;
+    }
+    .dataTable th {
+      font-size: 14px;
+    }
+    .dataTable td {
+      font-size: 12px;
+    }
+    
+    .modalHeaderContainer strong {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .modalHeaderContainer {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+    .paymentStatusContainer {
+      margin-bottom: 0px;
+    }
+    .heading {
+      font-size: 14px;
+      padding-bottom: 0px;
+    }
+    .modal {
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      max-height: 270px;
+      top: 55%;
+    }
+    .transactionDetails strong {
+      font-size: 12px;
+    }
+    .transactionDetails td {
+      font-size: 12px;
+    }
+    .transactionDetails {
+      align-items: center;
+    }
+    .closeButton2 {
+      padding: 0px;
+    }
+  }
+
+  @media screen and (min-width: 950px) and (max-width: 1265px) {
+    .sidebarContainer {
+        width: 254px;
+    }
+    .mainContent {
+        margin-left: 254px;
+    }
+}
+  @media screen and (max-width: 949px) {
+    .sidebarContainer {
+      width: 94px;
+    }
+    .headerContainer {
+      height: 71px;
+    }
+    .mainContent {
+      margin-left: 94px;
+    }
+    .contentWrapper {
+      margin-top: 71px;
+    }
+  }

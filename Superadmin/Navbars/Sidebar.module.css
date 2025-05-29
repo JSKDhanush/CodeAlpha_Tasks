@@ -1,0 +1,206 @@
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 254px;
+  background-color: #1E2116;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  z-index: 9999;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  gap: 10px;
+  border-left: 4px solid transparent;
+  background-color: transparent;
+  transition: background-color 0.3s, border-left-color 0.3s, color 0.3s;
+}
+
+.navItem:hover {
+  /* background-color: #2A2F1E; */
+  color: #4caf50;
+  font-weight: bolder;
+}
+
+.navItem.active {
+  background-color: rgba(74, 245, 59, 0.1);
+  border-left: 4px solid #4caf50;
+  color: #4AF53B;
+  border-left: 3px solid #4AF53B;
+  font-weight: bolder;
+  
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  flex-shrink: 0;
+
+}
+
+.text {
+  flex-grow: 1;
+
+}
+
+.navLink1 button {
+  display: inline-flex;
+  margin-left: 8px;
+}
+
+.navLink1 {
+  padding: 20px 10px 20px 10px;
+}
+
+.navLink1:hover {
+  background-color: #2A2F1E;
+  border-left: 4px solid #4caf50;
+}
+
+.navLink1 button span {
+  margin-left: 10px;
+}
+
+.navLink1 {
+  display: inline-flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 950px) {
+  .sidebar {
+    position: fixed;
+    /* left: -100%; */
+    top: 20;
+    width: 94px;
+    height: 100vh;
+    background-color: #222;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .navItem {
+    padding: 12px 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  .navLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .content.shifted {
+    margin-left: 250px;
+  }
+  
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  width: 100%; /* Ensure it fits within the sidebar */
+  padding: 10px 0; /* Add vertical padding */
+  text-align: center;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.text {
+  font-size: 12px; /* Adjust font size to fit */
+  margin-top: 5px; /* Space between icon and text */
+  width: 100%; /* Make sure text doesn't overflow */
+  white-space: normal; /* Allow text to wrap inside */
+  text-align: center; /* Keep it centered */
+  word-wrap: break-word; /* Ensure text breaks properly */
+}
+
+
+/* .navItem:hover .text {
+  visibility: visible;
+  opacity: 1;
+}
+ */
+}
+
+@media screen and (min-width: 1266px) and (max-width: 1920px) {
+  .sidebar {
+    position: fixed;
+    /* left: -100%; */
+    top: 20;
+    width: 200px;
+    height: 100vh;
+    /* background-color: #222; */
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  .navItem{
+    font-size: 12px;
+    padding: 12px;
+  }
+
+}

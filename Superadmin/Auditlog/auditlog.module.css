@@ -1,0 +1,594 @@
+/* General Layout */
+.dashboard {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: #ffffff;
+  padding: 20px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide Webkit scrollbar for Chrome, Safari, and Opera */
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Container */
+.container {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header Row */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title with Calendar */
+.title-with-calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* Filter Section Container */
+.filterSectionContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+/* Search Bar */
+.searchBarContainer {
+  display: flex;
+  align-items: center;
+  border: 3px solid #253443;
+  background: #11140b;
+  padding: 8px;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #e8eaed;
+}
+
+/* Date Filter */
+.dateButton {
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #e8eaed;
+  background-color: #000;
+  cursor: pointer;
+  min-width: 80px;
+  height: 50px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateButton.active {
+  border: 1px solid white;
+}
+
+.datePicker {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  height: 50px;
+}
+
+.dateInput {
+  padding: 5px;
+  border: none;
+  color: #e8eaed;
+  background-color: transparent;
+  width: 160px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Inverts the color of the calendar icon to white */
+}
+
+.dateSeparator {
+  color: #e8eaed;
+}
+
+.resetIcon {
+  cursor: pointer;
+  color: #e8eaed;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+/* Filter Container */
+.filter-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: -20px;
+}
+
+/* Filter Button Styling */
+.list-filter {
+  display: inline-flex;
+  gap: 20px;
+  padding: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list-filter h3 {
+  margin: 0 10px;
+  color: #e8eaed;
+  font-size: 16px;
+}
+
+.list-filter svg {
+  fill: #e8eaed;
+  cursor: pointer;
+}
+
+/* Dropdown Styling */
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1e2116;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  padding: 10px;
+  width: max-content;
+  text-align: center;
+}
+
+/* Dropdown Options */
+.filter-option {
+  padding: 5px;
+  background-color: #1e2116;
+  color: white;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.filter-option:hover {
+  border-bottom: 2px solid #4af53b;
+  border-radius: 10px;
+  color: #5dc960;
+}
+
+.calendar-icon {
+  margin-top: 10px;
+}
+
+/* Calendar Input Styling */
+.calendar-input {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: whitesmoke;
+  background-color: #444;
+  margin-left: -1250px;
+}
+
+/* Weekly Date Picker */
+.weekly-date-picker {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  z-index: 1000;
+  background-color: #1e2116;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 17px;
+  font-size: 16px;
+}
+
+.table td {
+  font-size: 15px;
+}
+
+.table th {
+  color: #ffffff;
+  background-color: #212714;
+  justify-content: center;
+}
+
+.table-row {
+  border: 2px solid #1e2116;
+  border-radius: 1rem;
+}
+
+.description-content {
+  color: gray;
+}
+
+.description-content strong,
+.description-content em {
+  color: white;
+}
+
+.table-row td[colspan="4"] {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 50px;
+  color: yellow;
+}
+
+/* Profile Image and Initials Styles */
+.name-column {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.initials-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Name and Email Container */
+.name-email-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  white-space: nowrap; /* Prevents name from wrapping to the next line */
+  font-size: 16px;
+  color: #fff;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Date and Time Column */
+.date-time-column {
+  white-space: nowrap; /* Prevents date and time from wrapping to the next line */
+}
+
+/* Role Column */
+.table td:nth-child(2) {
+  white-space: nowrap; /* Prevents role from wrapping to the next line */
+}
+
+.loaderWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* Sidebar and Header Styles */
+.sidebar {
+  width: 200px; /* Default width for large screens */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1e2116; /* Adjust based on your design */
+  transition: width 0.3s ease; /* Smooth transition for width changes */
+}
+
+.header {
+  height: 65px; /* Default height for large screens */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; /* Start from the left edge */
+  background-color: #212714; /* Adjust based on your design */
+  z-index: 100;
+  transition: height 0.3s ease; /* Smooth transition for height changes */
+}
+
+/* Responsive Adjustments */
+
+/* Screen width <= 949px */
+@media (max-width: 949px) {
+  .sidebar {
+    width: 94px;
+  }
+
+  .header {
+    height: 72px;
+    left: 94px; /* Offset by sidebar width */
+    width: calc(100% - 94px); /* Adjust width to account for sidebar */
+  }
+
+  .content {
+    margin-left: 94px; /* Match sidebar width */
+    margin-top: 72px; /* Match header height */
+    padding: 15px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .table td {
+    font-size: 12px;
+  }
+
+  .searchBarContainer {
+    width: 300px;
+  }
+
+  .dateInput {
+    width: 120px;
+  }
+
+  .filter-dropdown {
+    width: 200px;
+    right: 0;
+  }
+
+  .weekly-date-picker {
+    gap: 10px;
+    width: 300px;
+  }
+
+  .weekly-input {
+    width: 120px;
+  }
+}
+
+/* Screen width 950px to 1264px */
+@media (min-width: 950px) and (max-width: 1264px) {
+  .sidebar {
+    width: 254px;
+  }
+
+  .header {
+    height: 72px;
+    left: 254px; /* Offset by sidebar width */
+    width: calc(100% - 254px); /* Adjust width to account for sidebar */
+  }
+
+  .content {
+    margin-left: 254px; /* Match sidebar width */
+    margin-top: 72px; /* Match header height */
+    padding: 15px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .table td {
+    font-size: 13px;
+  }
+
+  .searchBarContainer {
+    width: 400px;
+  }
+
+  .dateInput {
+    width: 140px;
+  }
+}
+
+/* Screen width > 1264px */
+@media (min-width: 1265px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .header {
+    height: 65px;
+    left: 200px; /* Offset by sidebar width */
+    width: calc(100% - 200px); /* Adjust width to account for sidebar */
+  }
+
+  .content {
+    margin-left: 200px; /* Match sidebar width */
+    margin-top: 65px; /* Match header height */
+    padding: 20px;
+  }
+}
+
+/* Tablet Screens (iPad Pro, iPad Air, etc.) */
+@media (max-width: 1024px) {
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .table td {
+    font-size: 12px;
+  }
+
+  .searchBarContainer {
+    width: 300px;
+  }
+
+  .dateInput {
+    width: 120px;
+  }
+
+  .filter-dropdown {
+    width: 200px;
+    right: 0;
+  }
+
+  .weekly-date-picker {
+    gap: 10px;
+    width: 300px;
+  }
+
+  .weekly-input {
+    width: 120px;
+  }
+}
+
+/* iPad Mini Specific Adjustments */
+/* @media (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .table th,
+  .table td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .table td {
+    font-size: 11px;
+  }
+
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filterSectionContainer {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .searchBarContainer {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .dateButton,
+  .datePicker {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .weekly-date-picker {
+    width: 250px;
+  }
+
+  .weekly-input {
+    width: 100px;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .content {
+    margin-left: 0; /* No sidebar offset */
+    margin-top: 72px; /* Adjust based on header height */
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 94px; /* Ensure consistency with small screens */
+  }
+
+  .header {
+    left: 94px;
+    width: calc(100% - 94px);
+    height: 72px;
+  }
+
+  .table {
+    font-size: 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+  }
+}

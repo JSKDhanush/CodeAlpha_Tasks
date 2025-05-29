@@ -1,0 +1,90 @@
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    margin-top: 170px;
+    gap: 220px; 
+    /* margin: auto ; */
+    margin-left: 100px;
+    padding: 0;
+    row-gap: 30px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .content-container {
+    /* display: flex;
+      justify-content: center; */
+    width: 50%;
+    margin: 0 auto;
+    background-color: #17171A;
+  }
+
+  body {
+    display: flex;
+    /* justify-content: center; */
+    /* margin:0 auto; */
+    align-items: center;
+    /* height: 100vh; */
+    background-color: #17171A;
+  }
+
+.menu-item {
+    position: relative; /* Required for pseudo-element positioning */
+    background: #222531;
+    color: #ffffff;
+    width: 260px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px; /* Add border-radius */
+    height: 150px;
+    z-index: 1; /* Ensure the content stays above the pseudo-element */
+    overflow: hidden; /* Prevent pseudo-element overflow */
+  }
+
+*{
+    /* margin: 0 auto; */
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px; /* Apply border-radius */
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(45deg, #4af53b, #e8e81f); /* Gradient border */
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0); /* Mask to create border effect */
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0); /* Apply standard 'mask' for non-WebKit browsers */
+    -webkit-mask-composite: destination-out; /* Only for WebKit browsers */
+    mask-composite: exclude; /* For other browsers */
+    pointer-events: none; /* Ensure clicks pass through */
+  }
+
+
+.menu-item:hover {
+    background: linear-gradient(45deg, #4af53b, #e8e81f);
+  }
+.menu-icon {
+    font-size: 2rem; /* Adjust size of the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 35px;
+    width: 70%; /* Ensure it spans the container */
+    height: 70%; /* Ensure it spans the container */
+    text-align: center;
+    color: #fff;    /* Icon color */
+  }
+
